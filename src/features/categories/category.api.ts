@@ -7,7 +7,7 @@ export const categoryApi = createApi({
   reducerPath: 'categoryApi',
 
   // Configure the base query function for making API requests, specifying the base URL.
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000/api',}),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://json-server-omega-six.vercel.app//api',}),
 
   // Define tagTypes to identify cache tags for entities. In this case, only 'Category' is specified.
   tagTypes: ['Category'],
