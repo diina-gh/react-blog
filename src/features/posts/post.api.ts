@@ -7,7 +7,7 @@ export const postApi = createApi({
   reducerPath: 'postApi',
 
   // Configure the base query function for making API requests, specifying the base URL.
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://json-server-omega-six.vercel.app//api',}),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://json-server-omega-six.vercel.app/api',}),
 
   // Define tagTypes to identify cache tags for entities. In this case, only 'Post' is specified.
   tagTypes: ['Post'],
