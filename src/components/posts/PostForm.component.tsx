@@ -1,5 +1,3 @@
-// src/components/PostForm.tsx
-
 import React from 'react';
 import { Post } from '../../models/post.model';
 import { imageUrls } from '../../libs/imageBank.lib';
@@ -21,7 +19,7 @@ const PostForm: React.FC<PostFormProps> = ({ post, onSubmit }) => {
     description: post?.description || '',
     image: post?.image || imageUrls[0],
     createdAt: post?.createdAt || '',
-    category: post ? post.category : category,
+    category: post?.category || category,
   });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -31,6 +29,7 @@ const PostForm: React.FC<PostFormProps> = ({ post, onSubmit }) => {
       [name]: value,
     }));
   };
+
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -90,7 +89,7 @@ const PostForm: React.FC<PostFormProps> = ({ post, onSubmit }) => {
         >
           {categories &&
             categories.map((category: Category) => (
-              <option key={category.id} value={category.name}>
+              <option key={category.id} value={formData.category} selected={category.name === formData.category}>
                 {category.name}
               </option>
             ))}
